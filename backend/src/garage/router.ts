@@ -1,10 +1,12 @@
 import { Router as router, Request, Response } from 'express';
 import Carro from './carro.model';
 import Moto from './moto.model';
+import validateCar from '../middlewares/validateCar';
+import validateMotorCycle from '../middlewares/validateMotorcycle';
 
 const appRouter = router();
 
-appRouter.post('/carro', async (req: Request, res: Response) => {
+appRouter.post('/carro', validateCar, async (req: Request, res: Response) => {
   const {
     modelo, anoDeFabricação, quantidadeDePortas, marca,
   } = req.body;
@@ -16,7 +18,7 @@ appRouter.post('/carro', async (req: Request, res: Response) => {
   res.status(201).json({ response });
 });
 
-appRouter.post('/moto', async (req: Request, res: Response) => {
+appRouter.post('/moto', validateMotorCycle, async (req: Request, res: Response) => {
   const {
     modelo, anoDeFabricação, marca, passageiros,
   } = req.body;
