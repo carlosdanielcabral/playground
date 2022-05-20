@@ -3,6 +3,6 @@ interface Veiculo {
   anoDeFabricação: number,
   quantidadeDePortas: number,
   marca: string,
-};
+}
 
 export default Veiculo;
