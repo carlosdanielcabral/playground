@@ -60,6 +60,15 @@ function Palindrome() {
           <button type="submit">
             Ver palíndromos
           </button>
+
+          <button
+            className="clear"
+            disabled={palindromes.length === 0}
+            onClick={() => setPalindromes([])}
+            type="button"
+          >
+            Limpar
+          </button>
         </form>
 
         <section className="palindromes">

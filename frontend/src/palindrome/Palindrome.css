@@ -1,5 +1,30 @@
+.palindrome-page header {
+  text-align: center;
+}
+
+.palindrome-page header h1 {
+  color: rgb(64 96 142);
+  font-size: 50px;
+  margin: 20px auto;
+  width: 400px;
+}
+
 .palindrome-page main {
   text-align: center;
+}
+
+.palindrome-page blockquote {
+  display: flex;
+  flex-direction: column;
+}
+
+.palindrome-page a {
+  color: rgb(5, 88, 157);
+  padding: 10px;
+}
+
+.palindrome-page h2 {
+  font-weight: 200;
 }
 
 .palindrome-page label {
@@ -10,7 +35,7 @@
 }
 
 .palindrome-page label input {
-  border: 1px solid rgb(130, 130, 130);
+  border: 1px solid rgb(130 130 130);
   box-sizing: border-box;
   border-radius: 5px;
   height: 30px;
@@ -20,16 +45,46 @@
 }
 
 .palindrome-page button {
+  background-color: var(--main-green-color);
+  border: 1px solid var(--main-green-color);
   border-radius: 5px;
+  box-sizing: border-box;
+  color: white;
+  display: block;
   height: 30px;
+  margin: 5px auto;
   padding: 5px;
+  transition: 300ms;
   width: 150px;
+}
+
+.palindrome-page button:hover {
+  background-color: inherit;
+  color: var(--main-green-color);
+}
+
+.palindrome-page button.clear {
+  background-color: rgb(177, 40, 40);
+  border: 1px solid rgb(177, 40, 40)
+}
+
+.palindrome-page button.clear:hover {
+  background-color: inherit;
+  color: rgb(177, 40, 40);
+}
+
+.palindrome-page button:disabled,
+.palindrome-page button:disabled:hover {
+  background-color: rgb(145, 143, 143);
+  border: rgb(145, 143, 143);
+  color: white;
 }
 
 .palindromes {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   overflow: hidden;
   margin: auto;
   padding: 40px;
@@ -37,7 +92,7 @@
 }
 
 .palindrome {
-  border: 1px solid rgb(200, 200, 200);
+  border: 1px solid var(--main-gray-color);
   border-radius: 5px;
   box-sizing: border-box;
   margin: 5px;

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from './home/HomePage';
 import Palindrome from './palindrome/Palindrome';
-import './App.css';
 
 function App() {
   return (
