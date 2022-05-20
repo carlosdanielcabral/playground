@@ -1,0 +1,47 @@
+.palindrome-page main {
+  text-align: center;
+}
+
+.palindrome-page label {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.palindrome-page label input {
+  border: 1px solid rgb(130, 130, 130);
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  width: 150px;
+}
+
+.palindrome-page button {
+  border-radius: 5px;
+  height: 30px;
+  padding: 5px;
+  width: 150px;
+}
+
+.palindromes {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin: auto;
+  padding: 40px;
+  width: 90vw;
+}
+
+.palindrome {
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  width: 80px;
+}

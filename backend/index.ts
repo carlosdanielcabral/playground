@@ -8,7 +8,7 @@ const app = express();
 
 app
   .use(express.json())
-  .use(cors)
+  .use(cors())
   .use('/', router)
   .use(error);
 

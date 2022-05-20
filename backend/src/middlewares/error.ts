@@ -8,6 +8,7 @@ interface Error {
 }
 
 const errorMiddlware = (err: Error, req: Request, res: Response) => {
+  console.log(err);
   if (err.isJoi) {
     return res.status(400).json({ error: { message: err.details[0].message } });
   }

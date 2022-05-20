@@ -5,12 +5,16 @@ import './Palindrome.css';
 function Palindrome() {
   const [minValue, setMinValue] = useState('');
   const [maxValue, setMaxValue] = useState('');
-  // const [palindromes setṔalindromes] = useState([]);
+  const [palindromes, setPalindromes] = useState([]);
 
   const getPalindromes = async (e: React.FormEvent) => {
     e.preventDefault();
-    const response = await api.get(`/palindrome?initialValue=${minValue}&finalValue=${maxValue}`);
-    console.log(response);
+    try {
+      const response = await api.get(`/palindrome?initialValue=${minValue}&finalValue=${maxValue}`);
+      setPalindromes(response.data.palindromes);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -36,6 +40,7 @@ function Palindrome() {
             <input
               id="min-value"
               onChange={(e) => setMinValue(e.target.value)}
+              placeholder="0"
               type="number"
               value={minValue}
             />
@@ -46,6 +51,7 @@ function Palindrome() {
             <input
               id="max-value"
               onChange={(e) => setMaxValue(e.target.value)}
+              placeholder="0"
               type="number"
               value={maxValue}
             />
@@ -55,6 +61,16 @@ function Palindrome() {
             Ver palíndromos
           </button>
         </form>
+
+        <section className="palindromes">
+          {
+            palindromes.length > 0 && palindromes.map((palindrome) => (
+              <span className="palindrome" key={`palindrome-${palindrome}`}>
+                {palindrome}
+              </span>
+            ))
+          }
+        </section>
       </main>
     </div>
   );
