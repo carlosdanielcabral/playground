@@ -1,14 +1,17 @@
-import React, { FormHTMLAttributes, useState } from 'react';
+import React, { useState } from 'react';
+import api from '../services/api';
 import './Palindrome.css';
 
 function Palindrome() {
   const [minValue, setMinValue] = useState('');
   const [maxValue, setMaxValue] = useState('');
-  const [palindromes setṔalindromes] = useState([]);
+  // const [palindromes setṔalindromes] = useState([]);
 
-  const getPalindromes = (e: React.FormEvent) => {
+  const getPalindromes = async (e: React.FormEvent) => {
     e.preventDefault();
-  }
+    const response = await api.get(`/palindrome?initialValue=${minValue}&finalValue=${maxValue}`);
+    console.log(response);
+  };
 
   return (
     <div className="palindrome-page">
