@@ -5,9 +5,9 @@ import validatePurchase from '../middlewares/validatePurchase';
 const appRouter = router();
 
 appRouter.get('/', validatePurchase, (req: Request, res: Response) => {
-  const {purchasePrice, providedValue} = req.query;
+  const {purchaseValue, providedValue} = req.query;
 
-  const change = getChange(Number(purchasePrice), Number(providedValue));
+  const change = getChange(Number(purchaseValue), Number(providedValue));
 
   res.status(200).json({change});
 });

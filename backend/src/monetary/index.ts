@@ -1,5 +1,5 @@
-const getChange = (purchasePrice: number, providedValue: number) => {
-  const change = providedValue - purchasePrice;
+const getChange = (purchaseValue: number, providedValue: number) => {
+  const change = providedValue - purchaseValue;
   const ratio = (change / 100).toFixed(2);
   const [integer, decimal] = String(ratio).split('.');
   const billsQuantity = {
