@@ -6,6 +6,8 @@ const getPalindromes = (initialValue: number, finalValue: number) => {
 
     if (invertedNumber === i) palindromes.push(i);
   }
+
+  return palindromes;
 };
 
-module.exports = getPalindromes;
+export {getPalindromes};
