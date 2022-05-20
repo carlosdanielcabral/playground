@@ -5,7 +5,7 @@ import validateInterval from '../middlewares/validateInterval';
 const appRouter = router();
 
 appRouter.get('/', validateInterval, (req: Request, res: Response) => {
-  const {initialValue, finalValue} = req.params;
+  const {initialValue, finalValue} = req.query;
 
   const palindromes = getPalindromes(Number(initialValue), Number(finalValue));
 
