@@ -25,18 +25,18 @@ class Carro implements Veiculo {
       modelo, anoDeFabricação, quantidadeDePortas, marca,
     } = this;
 
-    const car = {
+    const carro = {
       modelo, anoDeFabricação, quantidadeDePortas, marca,
     };
 
-    const todosOsVeículos = await Carro.recuperarTodosOsCarros();
+    const todosOsVeículos = await Carro.recuperarTodosOsVeiculos();
 
-    todosOsVeículos.carros.push(car);
+    todosOsVeículos.carros.push(carro);
 
     return fs.writeFile(DB_PATH, JSON.stringify(todosOsVeículos));
   }
 
-  static async recuperarTodosOsCarros(): Promise<any> {
+  static async recuperarTodosOsVeiculos(): Promise<any> {
     return JSON.parse(await fs.readFile(DB_PATH, 'utf-8'));
   }
 }
