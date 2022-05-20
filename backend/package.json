@@ -16,7 +16,6 @@
     "@typescript-eslint/parser": "^5.25.0",
     "eslint": "^8.15.0",
     "eslint-config-google": "^0.14.0",
-    "nodemon": "^2.0.16",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.4"
   },
