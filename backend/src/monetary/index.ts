@@ -1,4 +1,4 @@
-const calculateChange = (purchasePrice: number, providedValue: number) => {
+const getChange = (purchasePrice: number, providedValue: number) => {
   const change = providedValue - purchasePrice;
   const ratio = (change / 100).toFixed(2);
   const [integer, decimal] = String(ratio).split('.');
@@ -12,4 +12,4 @@ const calculateChange = (purchasePrice: number, providedValue: number) => {
   return {total, billsQuantity};
 };
 
-export default calculateChange;
+export default getChange;
