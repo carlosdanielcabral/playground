@@ -46,7 +46,7 @@ function Ceps() {
         <div>
           {
             data.length === 5 && (
-            <div className="card">
+            <div className="card" data-testid="card">
               <button
                 className="close"
                 onClick={() => setData([])}
@@ -55,7 +55,7 @@ function Ceps() {
                 Fechar
               </button>
               { data.map((value: any) => (
-                <div className="cep-data">
+                <div className="cep-data" data-testid="cep-data">
                   {Object.keys(value).map((key) => (
                     <div className="data">
                       <span>{key}</span>
@@ -73,6 +73,7 @@ function Ceps() {
           <label htmlFor="cep1">
             CEP 1
             <input
+              data-testid="cep-input"
               className="default-input"
               id="cep1"
               onChange={(e) => setCep1(e.target.value)}
@@ -85,6 +86,7 @@ function Ceps() {
           <label htmlFor="cep2">
             CEP 2
             <input
+              data-testid="cep-input"
               className="default-input"
               id="cep2"
               onChange={(e) => setCep2(e.target.value)}
@@ -97,6 +99,7 @@ function Ceps() {
           <label htmlFor="cep3">
             CEP 3
             <input
+              data-testid="cep-input"
               className="default-input"
               id="cep3"
               onChange={(e) => setCep3(e.target.value)}
@@ -109,6 +112,7 @@ function Ceps() {
           <label htmlFor="cep4">
             CEP 4
             <input
+              data-testid="cep-input"
               className="default-input"
               id="cep4"
               onChange={(e) => setCep4(e.target.value)}
@@ -121,6 +125,7 @@ function Ceps() {
           <label htmlFor="cep5">
             CEP 5
             <input
+              data-testid="cep-input"
               className="default-input"
               id="cep5"
               onChange={(e) => setCep5(e.target.value)}
@@ -130,8 +135,8 @@ function Ceps() {
             />
           </label>
 
-          <button type="submit">
-            Request
+          <button type="submit" data-testid="submit">
+            Obter dados
           </button>
           {
             error && (

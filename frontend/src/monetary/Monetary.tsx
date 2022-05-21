@@ -49,7 +49,7 @@ function Monetary() {
               </button>
               <span className="total">
                 <h2>Quantidade de notas de troco</h2>
-                <p>{change.total}</p>
+                <p data-testid="total">{change.total}</p>
               </span>
 
               <table>
@@ -84,6 +84,7 @@ function Monetary() {
             Valor da compra
             <input
               className="default-input"
+              data-testid="purchase-value"
               id="purchase-value"
               onChange={(e) => setPurchaseValue(e.target.value)}
               placeholder="0"
@@ -96,6 +97,7 @@ function Monetary() {
             Valor do pagamento
             <input
               className="default-input"
+              data-testid="provided-value"
               id="provided-value"
               onChange={(e) => setProvidedValue(e.target.value)}
               placeholder="0"
@@ -104,7 +106,7 @@ function Monetary() {
             />
           </label>
 
-          <button type="submit">
+          <button type="submit" data-testid="submit">
             Pagar
           </button>
 

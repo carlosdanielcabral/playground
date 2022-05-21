@@ -32,9 +32,6 @@ function Garage() {
 
   return (
     <div className="garage-page">
-      {
-        saved && 'Salvo'
-      }
       <main>
         <section className="left" />
 
@@ -42,6 +39,7 @@ function Garage() {
           <label htmlFor="brand">
             Marca
             <input
+              data-testid="brand"
               id="brand"
               onChange={(e) => setBrand(e.target.value)}
               placeholder="Digite aqui"
@@ -54,6 +52,7 @@ function Garage() {
           <label htmlFor="model">
             Modelo
             <input
+              data-testid="model"
               id="model"
               onChange={(e) => setModel(e.target.value)}
               placeholder="Digite aqui"
@@ -66,6 +65,7 @@ function Garage() {
           <label htmlFor="manufacturing-year">
             Ano de fabricação
             <input
+              data-testid="manufacturing-year"
               id="provided-value"
               onChange={(e) => setManufacturingYear(e.target.value)}
               placeholder="Digite aqui"
@@ -80,6 +80,7 @@ function Garage() {
             <label htmlFor="car">
               Carro
               <input
+                data-testid="car"
                 type="radio"
                 name="vehicle"
                 id="car"
@@ -90,6 +91,7 @@ function Garage() {
             <label htmlFor="motorcycle">
               Moto
               <input
+                data-testid="motorcycle"
                 type="radio"
                 name="vehicle"
                 id="motorcycle"
@@ -106,6 +108,7 @@ function Garage() {
                   <label htmlFor="door-quantity-2">
                     2
                     <input
+                      data-testid="door-quantity"
                       type="radio"
                       name="door-quantity"
                       id="door-quantity-2"
@@ -130,6 +133,7 @@ function Garage() {
                   <label htmlFor="passenger-quantity-1">
                     1
                     <input
+                      data-testid="passenger-quantity"
                       type="radio"
                       name="passenger-quantity"
                       id="passenger-quantity-1"
@@ -156,6 +160,10 @@ function Garage() {
           <button type="submit">
             Salvar
           </button>
+
+          {
+            saved && 'Salvo!'
+          }
 
           {/* <button
             className="clear"

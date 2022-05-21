@@ -40,10 +40,11 @@ function Palindrome() {
 
         <h2>Selecione um intervalo para listar os palídromos:</h2>
 
-        <form onSubmit={getPalindromes}>
+        <form onSubmit={getPalindromes} data-testid="form">
           <label htmlFor="min-value">
             Valor mínimo
             <input
+              data-testid="min-value"
               id="min-value"
               onChange={(e) => setMinValue(e.target.value)}
               type="number"
@@ -55,6 +56,7 @@ function Palindrome() {
           <label htmlFor="max-value">
             Valor máximo
             <input
+              data-testid="max-value"
               id="max-value"
               onChange={(e) => setMaxValue(e.target.value)}
               type="number"
@@ -63,7 +65,7 @@ function Palindrome() {
             />
           </label>
 
-          <button type="submit">
+          <button type="submit" data-testid="submit">
             Ver palíndromos
           </button>
 
@@ -88,7 +90,7 @@ function Palindrome() {
         <section className="palindromes">
           {
             palindromes.length > 0 && palindromes.map((palindrome) => (
-              <span className="palindrome" key={`palindrome-${palindrome}`}>
+              <span className="palindrome" key={`palindrome-${palindrome}`} data-testid="palindrome">
                 {palindrome}
               </span>
             ))
