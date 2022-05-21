@@ -5,7 +5,7 @@
 
 .monetary-page {
   align-items: center;
-  background-image: url('../assets/image/cash-register.jpg');
+  background-image: url("../assets/image/cash-register.jpg");
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -51,7 +51,8 @@
   width: 100vw;
 }
 
-.monetary-page table td, .monetary-page th {
+.monetary-page table td,
+.monetary-page th {
   border: 1px solid var(--main-gray-color);
   height: 20px;
   padding: 10px;
