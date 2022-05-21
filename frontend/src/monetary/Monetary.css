@@ -60,6 +60,12 @@
   width: 60px;
 }
 
+.monetary-page .total {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .monetary-page .total h2 {
   font-size: 20px;
   font-weight: 200;

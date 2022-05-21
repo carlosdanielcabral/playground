@@ -48,13 +48,13 @@ function Monetary() {
                 Fechar
               </button>
               <span className="total">
-                <h2>Total</h2>
+                <h2>Quantidade de notas de troco</h2>
                 <p>{change.total}</p>
               </span>
 
               <table>
                 <tr>
-                  <th>Cédula/Moeda</th>
+                  <th>Notas</th>
                   {
                     Object.keys(change.billsQuantity).map((bill) => (
                       <th key={`th-bill-${bill}`}>{bill}</th>
