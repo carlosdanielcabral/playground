@@ -4,6 +4,7 @@ import HomePage from './home/HomePage';
 import Palindrome from './palindrome/Palindrome';
 import Monetary from './monetary/Monetary';
 import Garage from './garage/Garage';
+import Ceps from './ceps/Ceps';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/palindrome" component={Palindrome} />
         <Route exact path="/monetary" component={Monetary} />
         <Route exact path="/garage" component={Garage} />
+        <Route exact path="/ceps" component={Ceps} />
       </Switch>
     </BrowserRouter>
   );

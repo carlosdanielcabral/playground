@@ -32,3 +32,18 @@ code {
     "Courier New",
     monospace;
 }
+
+.default-input {
+  border: 1px solid var(--main-gray-color);
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 30px;
+  margin: 5px;
+  padding: 10px;
+  width: 300px;
+}
+
+.error {
+  color: rgb(135, 4, 11);
+  display: block;
+}

@@ -1,0 +1,121 @@
+.ceps-page header {
+  align-items: center;
+  background-color: white;
+  box-shadow: 1px 1px 10px 1px var(--main-gray-color);
+  box-sizing: border-box;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.ceps-page main {
+  box-sizing: border-box;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+}
+
+.ceps-page main .left {
+  background-image: url('../assets/image/map.svg');
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  height: 100vh;
+  margin: 0;
+  width: 60vw;
+}
+
+.ceps-page main form {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 80px;
+  position: relative;
+}
+
+.ceps-page form label {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.ceps-page .default-input {
+  padding: 15px;
+  width: 200px;
+}
+
+.ceps-page button {
+  background-color: var(--main-green-color);
+  border: 1px solid var(--main-green-color);
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+  transition: 500ms;
+}
+
+.ceps-page button:hover {
+  background-color: inherit;
+  color: var(--main-green-color);
+}
+
+.ceps-page .card {
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: center;
+  padding-top: 10px;
+  position: absolute;
+  top: 100px;
+  width: 100vw;
+  z-index: 1;
+}
+
+button.close {
+  background-color: rgb(176, 9, 12);
+  border: 1px solid rgb(176, 9, 12);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+button.close:hover {
+  background-color: inherit;
+  color: rgb(176, 9, 12);
+}
+
+.ceps-page .cep-data {
+  border: 1px solid var(--main-gray-color);
+  border-radius: 10px;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 230px;
+  justify-content: center;
+  margin: 5px 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+.cep-data .data span:nth-child(1) {
+  font-weight: 600;
+  padding-right: 10px;
+  text-transform: capitalize;
+  width: 80px;
+}
+
+.ceps-page .error {
+  position: absolute;
+  bottom: 20px;
+}

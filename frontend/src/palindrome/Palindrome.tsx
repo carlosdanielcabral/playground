@@ -6,14 +6,20 @@ function Palindrome() {
   const [minValue, setMinValue] = useState('');
   const [maxValue, setMaxValue] = useState('');
   const [palindromes, setPalindromes] = useState([]);
+  const [error, setError] = useState('');
 
   const getPalindromes = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      const response = await api.get(`/palindrome?initialValue=${minValue}&finalValue=${maxValue}`);
-      setPalindromes(response.data.palindromes);
-    } catch (err) {
-      console.log(err);
+    if (minValue > maxValue) {
+      setError('O valor mínimo não pode ser maior que o valor máximo.');
+    } else {
+      try {
+        const response = await api.get(`/palindrome?initialValue=${minValue}&finalValue=${maxValue}`);
+        setPalindromes(response.data.palindromes);
+        setError('');
+      } catch (err) {
+        setError('Ocorreu um erro! Tente novamente mais tarde.');
+      }
     }
   };
 
@@ -40,9 +46,9 @@ function Palindrome() {
             <input
               id="min-value"
               onChange={(e) => setMinValue(e.target.value)}
-              placeholder="0"
               type="number"
               value={minValue}
+              required
             />
           </label>
 
@@ -51,9 +57,9 @@ function Palindrome() {
             <input
               id="max-value"
               onChange={(e) => setMaxValue(e.target.value)}
-              placeholder="0"
               type="number"
               value={maxValue}
+              required
             />
           </label>
 
@@ -69,6 +75,14 @@ function Palindrome() {
           >
             Limpar
           </button>
+
+          {
+            error && (
+              <small className="error">
+                {error}
+              </small>
+            )
+          }
         </form>
 
         <section className="palindromes">

@@ -14,16 +14,22 @@ function Monetary() {
     },
   });
   const [hasChange, setHasChange] = useState(false);
+  const [error, setError] = useState('');
 
   const getChange = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      const response = await api.get(`/monetary?purchaseValue=${purchaseValue}&providedValue=${providedValue}`);
-      setChange(response.data.change);
-      setHasChange(true);
-      // setPalindromes(response.data.palindromes);
-    } catch (err) {
-      console.log(err);
+    if (Number(purchaseValue) > Number(providedValue)) {
+      setError('O valor da compra é maior que o valor fornecido.');
+    } else {
+      try {
+        const response = await api.get(`/monetary?purchaseValue=${purchaseValue}&providedValue=${providedValue}`);
+        setChange(response.data.change);
+        setHasChange(true);
+        setError('');
+        // setPalindromes(response.data.palindromes);
+      } catch (err) {
+        setError('Ocorreu um erro! Tente novamente mais tarde.');
+      }
     }
   };
 
@@ -34,6 +40,13 @@ function Monetary() {
           <>
             <div className="blur" />
             <div className="change">
+              <button
+                className="close"
+                onClick={() => setHasChange(false)}
+                type="button"
+              >
+                Fechar
+              </button>
               <span className="total">
                 <h2>Total</h2>
                 <p>{change.total}</p>
@@ -70,6 +83,7 @@ function Monetary() {
           <label htmlFor="purchase-value">
             Valor da compra
             <input
+              className="default-input"
               id="purchase-value"
               onChange={(e) => setPurchaseValue(e.target.value)}
               placeholder="0"
@@ -81,6 +95,7 @@ function Monetary() {
           <label htmlFor="provided-value">
             Valor do pagamento
             <input
+              className="default-input"
               id="provided-value"
               onChange={(e) => setProvidedValue(e.target.value)}
               placeholder="0"
@@ -92,6 +107,14 @@ function Monetary() {
           <button type="submit">
             Pagar
           </button>
+
+          {
+            error && (
+              <small className="error">
+                {error}
+              </small>
+            )
+          }
 
           {/* <button
             className="clear"

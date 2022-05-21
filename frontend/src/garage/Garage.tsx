@@ -47,6 +47,7 @@ function Garage() {
               placeholder="Digite aqui"
               type="text"
               value={brand}
+              required
             />
           </label>
 
@@ -58,6 +59,7 @@ function Garage() {
               placeholder="Digite aqui"
               type="text"
               value={model}
+              required
             />
           </label>
 
@@ -69,6 +71,7 @@ function Garage() {
               placeholder="Digite aqui"
               type="number"
               value={manufacturingYear}
+              required
             />
           </label>
 
