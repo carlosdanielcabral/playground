@@ -12,7 +12,7 @@ function HomePage() {
 
       <main>
         <section className="projects">
-          <Link to="/palindrome">
+          <Link to="/palindrome" data-testId="palindrome-link">
             <h2>Palíndromos</h2>
           </Link>
 

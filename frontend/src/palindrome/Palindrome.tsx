@@ -24,7 +24,7 @@ function Palindrome() {
   };
 
   return (
-    <div className="palindrome-page">
+    <div className="palindrome-page" data-testid="palindrome-page">
       <header>
         <h1>Palíndromos</h1>
       </header>
