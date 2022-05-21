@@ -19,7 +19,7 @@
 }
 
 .palindrome-page a {
-  color: rgb(5, 88, 157);
+  color: rgb(5 88 157);
   padding: 10px;
 }
 
@@ -64,19 +64,19 @@
 }
 
 .palindrome-page button.clear {
-  background-color: rgb(177, 40, 40);
-  border: 1px solid rgb(177, 40, 40)
+  background-color: rgb(177 40 40);
+  border: 1px solid rgb(177 40 40);
 }
 
 .palindrome-page button.clear:hover {
   background-color: inherit;
-  color: rgb(177, 40, 40);
+  color: rgb(177 40 40);
 }
 
 .palindrome-page button:disabled,
 .palindrome-page button:disabled:hover {
-  background-color: rgb(145, 143, 143);
-  border: rgb(145, 143, 143);
+  background-color: rgb(145 143 143);
+  border: rgb(145 143 143);
   color: white;
 }
 

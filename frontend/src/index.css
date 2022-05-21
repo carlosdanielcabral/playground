@@ -3,6 +3,11 @@
   --main-green-color: #067e85;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: Dosis;
   src: url("./assets/fonts/Dosis/Dosis-VariableFont_wght.ttf");

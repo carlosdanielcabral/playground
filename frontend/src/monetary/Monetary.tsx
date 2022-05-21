@@ -5,13 +5,22 @@ import './Monetary.css';
 function Monetary() {
   const [purchaseValue, setPurchaseValue] = useState('');
   const [providedValue, setProvidedValue] = useState('');
-  // const [palindromes, setPalindromes] = useState([]);
+  const [change, setChange] = useState({
+    total: 0,
+    billsQuantity: {
+      100: 0,
+      10: 0,
+      1: 0,
+    },
+  });
+  const [hasChange, setHasChange] = useState(false);
 
   const getChange = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const response = await api.get(`/monetary?purchaseValue=${purchaseValue}&providedValue=${providedValue}`);
-      console.log(response);
+      setChange(response.data.change);
+      setHasChange(true);
       // setPalindromes(response.data.palindromes);
     } catch (err) {
       console.log(err);
@@ -20,13 +29,43 @@ function Monetary() {
 
   return (
     <div className="monetary-page">
-      <header>
-        <h1>Caixa</h1>
-      </header>
+      {
+        hasChange && (
+          <>
+            <div className="blur" />
+            <div className="change">
+              <span className="total">
+                <h2>Total</h2>
+                <p>{change.total}</p>
+              </span>
+
+              <table>
+                <tr>
+                  <th>Cédula/Moeda</th>
+                  {
+                    Object.keys(change.billsQuantity).map((bill) => (
+                      <th key={`th-bill-${bill}`}>{bill}</th>
+                    ))
+                  }
+                </tr>
+                <tr>
+                  <td>Quantidade</td>
+                  {
+                    Object.values(change.billsQuantity).map((quantity) => (
+                      <td key={`td-bill-quantity-${quantity}`}>
+                        {quantity}
+                      </td>
+                    ))
+                  }
+                </tr>
+              </table>
+            </div>
+          </>
+        )
+      }
 
       <main>
-        <h2>Selecione um intervalo para listar os palídromos:</h2>
-
+        <h1>Caixa</h1>
         <form onSubmit={getChange}>
           <label htmlFor="purchase-value">
             Valor da compra
