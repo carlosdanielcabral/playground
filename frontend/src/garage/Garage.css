@@ -1,0 +1,51 @@
+.garage-page main {
+  display: flex;
+}
+
+.garage-page main .left {
+  background-image: url('../assets/image/garage.jpg');
+  background-position: center;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 70vw;
+}
+
+.garage-page form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.garage-page label {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.garage-page input {
+  border: 1px solid var(--main-gray-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.garage-page fieldset {
+  border: none;
+}
+
+.garage-page fieldset label {
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.garage-page input[type="radio"] {
+  margin: 5px;
+}
+
+.garage-page button {
+  background-color: rgb(2 140 64);
+  border: 1px solid rgb(2 140 64);
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+}

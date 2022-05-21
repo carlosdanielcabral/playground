@@ -6,7 +6,7 @@ import validateMotorCycle from '../middlewares/validateMotorcycle';
 
 const appRouter = router();
 
-appRouter.post('/carro', validateCar, async (req: Request, res: Response) => {
+appRouter.post('/car', validateCar, async (req: Request, res: Response) => {
   const {
     modelo, anoDeFabricação, quantidadeDePortas, marca,
   } = req.body;
@@ -18,7 +18,7 @@ appRouter.post('/carro', validateCar, async (req: Request, res: Response) => {
   res.status(201).json({ response });
 });
 
-appRouter.post('/moto', validateMotorCycle, async (req: Request, res: Response) => {
+appRouter.post('/motorcyle', validateMotorCycle, async (req: Request, res: Response) => {
   const {
     modelo, anoDeFabricação, marca, passageiros,
   } = req.body;
