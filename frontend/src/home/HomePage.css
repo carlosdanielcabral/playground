@@ -1,5 +1,7 @@
 .home-page {
-  background-color: #f3b202;
+  background: #546b99 url('../assets/image/playground.jpg');
+  background-size: cover;
+  background-position: center;
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
@@ -10,4 +12,46 @@
   display: flex;
   justify-content: center;
   padding: 20px;
+}
+
+.home-page main {
+  display: flex;
+  justify-content: center;
+}
+
+.home-page section.projects {
+  align-items: center;
+  background-color: rgb(20 20 20 / 0.5);
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 200px;
+  justify-content: center;
+  width: 80vw;
+}
+
+.home-page .projects a {
+  align-items: center;
+  background-color: rgb(255 255 255 / 0.6);
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  margin: 10px;
+  text-decoration: none;
+  transition: 300ms;
+  width: 200px;
+}
+
+.home-page .projects a:hover {
+  background-color: rgb(255 255 255 / 0.7);
+  transform: scale(1.09);
+}
+
+.home-page h2 {
+  font-weight: 200;
 }

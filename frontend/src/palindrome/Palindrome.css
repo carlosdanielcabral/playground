@@ -91,7 +91,7 @@
   width: 90vw;
 }
 
-.palindrome {
+.palindrome-page .palindrome {
   border: 1px solid var(--main-gray-color);
   border-radius: 5px;
   box-sizing: border-box;
