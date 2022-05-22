@@ -72,6 +72,7 @@
 }
 
 .ceps-page .card {
+  align-items: center;
   background-color: white;
   box-sizing: border-box;
   display: flex;
