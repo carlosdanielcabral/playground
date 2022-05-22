@@ -6,27 +6,34 @@ function Garage() {
   const [model, setModel] = useState('');
   const [brand, setBrand] = useState('');
   const [manufacturingYear, setManufacturingYear] = useState('');
-  const [doorQuantity, setDoorQuantity] = useState(0);
-  const [passengerQuantity, setPassengerQuantity] = useState(0);
+  const [doorQuantity, setDoorQuantity] = useState(2);
+  const [passengerQuantity, setPassengerQuantity] = useState(2);
   const [type, setType] = useState('car');
   const [saved, setSaved] = useState(false);
+  const [error, setError] = useState('');
 
   const saveVehicle = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       if (type === 'car') {
         await api.post('/garage/car', {
-          model, brand, manufacturingYear, doorQuantity,
+          modelo: model,
+          marca: brand,
+          anoDeFabricação: manufacturingYear,
+          quantidadeDePortas: doorQuantity,
         });
       } else {
         await api.post('/garage/motorcyle', {
-          model, brand, manufacturingYear, passengerQuantity,
+          modelo: model,
+          marca: brand,
+          anoDeFabricação: manufacturingYear,
+          passageiros: passengerQuantity,
         });
       }
       setSaved(true);
       // setPalindromes(response.data.palindromes);
     } catch (err) {
-      console.log(err);
+      setError('Ocorreu um erro! Tente novamente mais tarde.');
     }
   };
 
@@ -160,6 +167,9 @@ function Garage() {
           <button type="submit">
             Salvar
           </button>
+          {
+            error && <small className="error">{error}</small>
+          }
 
           {
             saved && 'Salvo!'

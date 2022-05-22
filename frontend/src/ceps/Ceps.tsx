@@ -31,7 +31,9 @@ function Ceps() {
       if (request.status === 200) {
         const object = JSON.parse(request.responseText);
         if (!object.erro) cepData.push(object);
-        cepData.push({ cep, erro: 'Não foi possível encontrar os dados referentes a esse cep' });
+        else {
+          cepData.push({ cep, erro: 'Não foi possível encontrar os dados referentes a esse cep' });
+        }
       }
     }
     setData(cepData);
@@ -54,10 +56,10 @@ function Ceps() {
               >
                 Fechar
               </button>
-              { data.map((value: any) => (
-                <div className="cep-data" data-testid="cep-data">
+              { data.map((value: any, index) => (
+                <div className="cep-data" data-testid="cep-data" key={`cep-data-${index + 1}`}>
                   {Object.keys(value).map((key) => (
-                    <div className="data">
+                    <div className="data" key={`data-${key}-`}>
                       <span>{key}</span>
                       <span>{value[key]}</span>
                     </div>

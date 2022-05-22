@@ -34,6 +34,7 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 1px 1px 15px 2px rgb(100 100 100);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: 500px;
@@ -137,4 +138,10 @@
 .monetary-page form button:hover {
   background-color: inherit;
   color: rgb(0 110 169);
+}
+
+@media screen and (max-width: 760px) {
+  .monetary-page .change {
+    width: 100vw;
+  }
 }

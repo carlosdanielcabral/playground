@@ -1,6 +1,11 @@
-import fs from 'fs/promises';
+import { promises as fs } from 'fs';
 import path from 'path';
-import Veiculo from './veiculo.interface';
+import { Veiculo } from './veiculo.interface';
+
+enum QuantidadeDePassageiros {
+  um = 1,
+  dois = 2
+}
 
 const DB_PATH = path.join(__dirname, '../../db/vehicles.json');
 
@@ -9,13 +14,13 @@ class Moto implements Veiculo {
 
   anoDeFabricação: number;
 
-  quantidadeDePortas: number = 0;
+  quantidadeDePortas = 0;
 
   marca: string;
 
-  rodas: number = 2;
+  rodas = 2;
 
-  passageiros: number = 1 || 2;
+  passageiros: QuantidadeDePassageiros;
 
   constructor(
     modelo: string,
@@ -45,7 +50,7 @@ class Moto implements Veiculo {
     return fs.writeFile(DB_PATH, JSON.stringify(todosOsVeículos));
   }
 
-  static async recuperarTodosOsVeiculos(): Promise<any> {
+  static async recuperarTodosOsVeiculos() {
     return JSON.parse(await fs.readFile(DB_PATH, 'utf-8'));
   }
 }

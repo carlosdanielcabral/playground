@@ -5,9 +5,9 @@ services:
     build: ./backend
     container_name: backend_compose
     ports:
-      - 3100:3100
+      - 3201:3201
     environment:
-      - PORT=3100
+      - PORT=3201
     volumes:
       - /app/node_modules
       - ./backend:/app

@@ -1,14 +1,17 @@
 import { Request, Response } from 'express';
 
-interface Error {
+type Details = {
+  message: string,
+}
+
+type Error = {
     code: number,
-    details: any,
+    details: Details[],
     isJoi: boolean,
-    message: any,
+    message: string,
 }
 
 const errorMiddlware = (err: Error, req: Request, res: Response) => {
-  console.log(err);
   if (err.isJoi) {
     return res.status(400).json({ error: { message: err.details[0].message } });
   }

@@ -6,22 +6,26 @@
   display: flex;
   height: 80px;
   justify-content: center;
+  overflow: hidden;
   left: 0;
   position: fixed;
   top: 0;
   width: 100vw;
+  z-index: 1;
 }
 
 .ceps-page main {
   box-sizing: border-box;
   display: flex;
+  flex-wrap: wrap;
   overflow: hidden;
   position: relative;
   width: 100vw;
 }
 
-.ceps-page main .left {
-  background-image: url('../assets/image/map.svg');
+.ceps-page .left {
+  background-image: url("../assets/image/map.svg");
+  background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,7 +36,7 @@
   width: 60vw;
 }
 
-.ceps-page main form {
+.ceps-page form {
   align-items: flex-start;
   box-sizing: border-box;
   display: flex;
@@ -75,23 +79,26 @@
   height: 100vh;
   justify-content: center;
   padding-top: 10px;
-  position: absolute;
-  top: 100px;
+  position: fixed;
+  left: 0;
+  overflow-y: auto;
+  top: 0;
   width: 100vw;
   z-index: 1;
 }
 
 button.close {
-  background-color: rgb(176, 9, 12);
-  border: 1px solid rgb(176, 9, 12);
+  background-color: rgb(176 9 12);
+  border: 1px solid rgb(176 9 12);
   position: absolute;
   right: 0;
   top: 0;
+  width: 100px;
 }
 
 button.close:hover {
   background-color: inherit;
-  color: rgb(176, 9, 12);
+  color: rgb(176 9 12);
 }
 
 .ceps-page .cep-data {
@@ -118,4 +125,36 @@ button.close:hover {
 .ceps-page .error {
   position: absolute;
   bottom: 20px;
+}
+
+@media screen and (max-width: 760px) {
+  .ceps-page main {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .ceps-page .left {
+    width: 90vw;
+  }
+
+  .ceps-page form {
+    align-items: center;
+    width: 100vw;
+  }
+
+  .ceps-page .default-input {
+    font-size: 24px;
+    padding: 25px 10px;
+    width: 90vw;
+  }
+
+  .ceps-page button {
+    padding: 15px 0;
+    margin-bottom: 20px;
+    width: 90vw;
+  }
+
+  .ceps-page button.close {
+    width: 100px;
+  }
 }

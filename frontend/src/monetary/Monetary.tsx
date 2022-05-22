@@ -53,24 +53,28 @@ function Monetary() {
               </span>
 
               <table>
-                <tr>
-                  <th>Notas</th>
-                  {
-                    Object.keys(change.billsQuantity).map((bill) => (
-                      <th key={`th-bill-${bill}`}>{bill}</th>
-                    ))
-                  }
-                </tr>
-                <tr>
-                  <td>Quantidade</td>
-                  {
-                    Object.values(change.billsQuantity).map((quantity) => (
-                      <td key={`td-bill-quantity-${quantity}`}>
-                        {quantity}
-                      </td>
-                    ))
-                  }
-                </tr>
+                <thead>
+                  <tr>
+                    <th>Notas</th>
+                    {
+                      Object.keys(change.billsQuantity).map((bill) => (
+                        <th key={`th-bill-${bill}`}>{bill}</th>
+                      ))
+                    }
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Quantidade</td>
+                    {
+                      Object.values(change.billsQuantity).map((quantity, index) => (
+                        <td key={`td-bill-quantity-${quantity}-${index + 1}`}>
+                          {quantity}
+                        </td>
+                      ))
+                    }
+                  </tr>
+                </tbody>
               </table>
             </div>
           </>
@@ -90,6 +94,7 @@ function Monetary() {
               placeholder="0"
               type="number"
               value={purchaseValue}
+              required
             />
           </label>
 
@@ -103,6 +108,7 @@ function Monetary() {
               placeholder="0"
               type="number"
               value={providedValue}
+              required
             />
           </label>
 

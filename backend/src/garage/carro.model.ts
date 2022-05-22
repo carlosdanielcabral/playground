@@ -1,6 +1,6 @@
-import fs from 'fs/promises';
+import { promises as fs } from 'fs';
 import path from 'path';
-import Veiculo from './veiculo.interface';
+import { QuantidadeDePortas, Veiculo } from './veiculo.interface';
 
 const DB_PATH = path.join(__dirname, '../../db/vehicles.json');
 
@@ -9,7 +9,7 @@ class Carro implements Veiculo {
 
   anoDeFabricação: number;
 
-  quantidadeDePortas: number = 2 || 4;
+  quantidadeDePortas: QuantidadeDePortas;
 
   marca: string;
 
@@ -36,7 +36,7 @@ class Carro implements Veiculo {
     return fs.writeFile(DB_PATH, JSON.stringify(todosOsVeículos));
   }
 
-  static async recuperarTodosOsVeiculos(): Promise<any> {
+  static async recuperarTodosOsVeiculos() {
     return JSON.parse(await fs.readFile(DB_PATH, 'utf-8'));
   }
 }
