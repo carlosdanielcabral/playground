@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../services/api';
+import Loading from '../components/Loading';
 import './Ceps.css';
 
 function Ceps() {
@@ -10,6 +11,7 @@ function Ceps() {
   const [cep5, setCep5] = useState('');
   const [data, setData] = useState([] as {}[]);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const requestCeps = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,13 +27,18 @@ function Ceps() {
       query += `cep${i + 1}=${ceps[i]}${i !== 4 ? '&' : ''}`;
     }
 
+    setLoading(true);
     const response = await api.get(`/ceps?${query}`);
+    setLoading(false);
     setData(response.data.cepsData);
     return null;
   };
 
   return (
     <div className="ceps-page">
+      {
+        loading && <Loading />
+      }
       <header>
         <h1>CEPs</h1>
       </header>
