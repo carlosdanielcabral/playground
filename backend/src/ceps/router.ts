@@ -1,10 +1,10 @@
 import { Request, Response, Router as router } from 'express';
 import getCepData from './getCepData';
-// import validatePurchase from '../middlewares/validatePurchase';
+import validateCeps from '../middlewares/validateCeps';
 
 const appRouter = router();
 
-appRouter.get('/', async (req: Request, res: Response) => {
+appRouter.get('/', validateCeps, async (req: Request, res: Response) => {
   const ceps: object = req.query;
 
   const cepsArray = Object.values(ceps);

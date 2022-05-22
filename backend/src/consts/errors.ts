@@ -7,6 +7,10 @@ const ERRORS = {
     code: 400,
     message: 'Valor insuficiente.',
   },
+  invalidCep: {
+    code: 400,
+    message: 'Verifique os CEPs informados!',
+  },
 };
 
 export default ERRORS;
