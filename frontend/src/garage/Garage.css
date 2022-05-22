@@ -20,7 +20,7 @@
 .garage-page label {
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .garage-page input {
@@ -60,4 +60,11 @@
   .garage-page form {
     width: 100vw;
   }
+}
+
+.saved {
+  color: rgb(1, 78, 40);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
 }

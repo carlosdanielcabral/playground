@@ -172,7 +172,7 @@ function Garage() {
           }
 
           {
-            saved && 'Salvo!'
+            saved && <small className="saved">Veículo salvo!</small>
           }
 
           {/* <button
